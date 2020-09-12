@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<br>
+<br>
+<div class="container" id="results-table">
+    {% for item in results %}
+<table class="table table-bordered">
+  <thead>
+  <tr style="color:green;">
+      <th scope="col">HallTicket</th>
+      <th scope="col">Name</th>
+      <th style="col">Group</th>
+      <th scope="col">Grade</th>
+      <th scope="col">Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>{{item.htno}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.group}}</td>
+      <td>{{item.grade}}</td>
+      <td>{{item.status}}</td>
+  </tr>
+  </tbody>
+</table>
+      <button onclick="window.print()" class="btn btn-primary">Print</button>
+    {% endfor %}
+
+    </div>
+<div class="container">
+{% if messages %}
+    {% for msg in messages %}
+    <p style="color:blue"><strong>{{msg}}</strong></p>
+    {% endfor %}
+{% endif %}
+</div>
+<script>
+
+</script>
+</body>
+</html>
